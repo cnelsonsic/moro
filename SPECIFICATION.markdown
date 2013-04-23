@@ -1,7 +1,8 @@
 # Moro Game Console Specification
 
-Version: 0.1.0
-Last Modified: Tue, 23 Apr 2013 00:31:06 +0000
+Version: {major}.{minor}.{patch}
+
+Last Modified: {datetimestamp}
 
 The key words
 "MUST", "MUST NOT", "REQUIRED",
