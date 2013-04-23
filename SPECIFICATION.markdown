@@ -91,6 +91,7 @@ during normal usage.
 
 #### Cartridge Connectors
 There are two connectors supported for connecting cartridges.
+
 ##### USB
 There MUST be
 two female USB connectors
