@@ -1,0 +1,34 @@
+<h1 id="moro-game-console-specification">Moro Game Console Specification</h1>
+<p>Version: 0.1.1</p>
+<p>Last Modified: Tue, 23 Apr 2013 19:43:13 +0000</p>
+<p>Authors: C Nelson, C Nelson, C Nelson, C Nelson</p>
+<p>The key words &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;, &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;, &quot;MAY&quot;, and &quot;OPTIONAL&quot; in this document are to be interpreted as described in RFC 2119.</p>
+<h2 id="software">Software</h2>
+<p>Implementations of this specification MUST use GNU/Linux.</p>
+<p>It is RECOMMENDED to use a Debian-based distribution, but most distributions will work.</p>
+<p>Implementations MUST also use X11. It is RECOMMENDED to use XOrg.</p>
+<p>Implementations SHOULD have a very basic window manager, configured such that normal applications will be displayed fullscreen and with no window decorators. The reference implementation will use DWM (http://dwm.suckless.org/).</p>
+<p>When started, the OS SHOULD automatically mount any mass storage drives that are connected.</p>
+<p>The mass storage drives SHOULD be mounted according to their filesystem labels following the pattern &quot;/media/<LABEL>&quot;.</p>
+<p>The filesystem containing the main executable MUST be labeled &quot;app&quot;. Additional mass storage drives SHOULD be labeled with meaningful names, but they will not be used directly.</p>
+<p>The auxilliary drives MAY be used for cached data files, cartridge-local game saves, or other application data.</p>
+<p>After mounting, the OS MUST attempt to execute &quot;/media/app/launcher&quot;.</p>
+<p>The file MUST be executable.</p>
+<p>Its current/working directory SHOULD be &quot;~&quot;.</p>
+<h2 id="hardware">Hardware</h2>
+<h3 id="cartridge">Cartridge</h3>
+<p>There MAY be only one mass storage drive in the cartridge. Any additional drives in the cartridge SHOULD be used by the application itself, and will not be automatically used by the operating system.</p>
+<h3 id="console">Console</h3>
+<h4 id="slot">Slot</h4>
+<p>The Slot is the opening that receives game cartridges.</p>
+<p>The Slot MUST be at least, 10cm long, 2cm wide, with a minimum depth of 2cm, and a maximum depth of 4cm.</p>
+<p>The connectors between the console and the cartridge SHOULD be out of sight during normal usage.</p>
+<h4 id="cartridge-connectors">Cartridge Connectors</h4>
+<p>There are two connectors supported for connecting cartridges.</p>
+<h5 id="usb">USB</h5>
+<p>There MUST be two female USB connectors on either end of the area immediately below the slot.</p>
+<p>They MUST be offset toward the center of the slot by 1cm from either side.</p>
+<p>They MUST also be aligned vertically, with the long edge of the USB connector aligned with the short edge of the slot.</p>
+<h5 id="gpio">GPIO</h5>
+<p>In the dead center of the area immediately below the slot, there SHOULD be a bank of 26 (2x13) female pin headers. If present, they MUST be 0.1&quot;-spaced.</p>
+<p>There MAY be more than 26 female pin headers, but they must be the same spacing and extend on either side as an addition to the primary bank of 26. If present, the additional banks MUST NOT have any space between it and the primary bank of headers.</p>

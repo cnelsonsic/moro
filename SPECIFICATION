@@ -1,0 +1,93 @@
+Moro Game Console Specification
+===============================
+
+Version: 0.1.1
+
+Last Modified: Tue, 23 Apr 2013 19:43:13 +0000
+
+Authors: C Nelson, C Nelson, C Nelson, C Nelson
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+"SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+document are to be interpreted as described in RFC 2119.
+
+Software
+--------
+
+Implementations of this specification MUST use GNU/Linux.
+
+It is RECOMMENDED to use a Debian-based distribution, but most
+distributions will work.
+
+Implementations MUST also use X11. It is RECOMMENDED to use XOrg.
+
+Implementations SHOULD have a very basic window manager, configured such
+that normal applications will be displayed fullscreen and with no window
+decorators. The reference implementation will use DWM
+(http://dwm.suckless.org/).
+
+When started, the OS SHOULD automatically mount any mass storage drives
+that are connected.
+
+The mass storage drives SHOULD be mounted according to their filesystem
+labels following the pattern "/media/".
+
+The filesystem containing the main executable MUST be labeled "app".
+Additional mass storage drives SHOULD be labeled with meaningful names,
+but they will not be used directly.
+
+The auxilliary drives MAY be used for cached data files, cartridge-local
+game saves, or other application data.
+
+After mounting, the OS MUST attempt to execute "/media/app/launcher".
+
+The file MUST be executable.
+
+Its current/working directory SHOULD be "~".
+
+Hardware
+--------
+
+Cartridge
+
+There MAY be only one mass storage drive in the cartridge. Any
+additional drives in the cartridge SHOULD be used by the application
+itself, and will not be automatically used by the operating system.
+
+Console
+
+Slot
+
+The Slot is the opening that receives game cartridges.
+
+The Slot MUST be at least, 10cm long, 2cm wide, with a minimum depth of
+2cm, and a maximum depth of 4cm.
+
+The connectors between the console and the cartridge SHOULD be out of
+sight during normal usage.
+
+Cartridge Connectors
+
+There are two connectors supported for connecting cartridges.
+
+USB
+
+There MUST be two female USB connectors on either end of the area
+immediately below the slot.
+
+They MUST be offset toward the center of the slot by 1cm from either
+side.
+
+They MUST also be aligned vertically, with the long edge of the USB
+connector aligned with the short edge of the slot.
+
+GPIO
+
+In the dead center of the area immediately below the slot, there SHOULD
+be a bank of 26 (2x13) female pin headers. If present, they MUST be
+0.1"-spaced.
+
+There MAY be more than 26 female pin headers, but they must be the same
+spacing and extend on either side as an addition to the primary bank of
+26. If present, the additional banks MUST NOT have any space between it
+and the primary bank of headers.
