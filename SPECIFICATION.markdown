@@ -44,19 +44,6 @@ SHOULD be mounted according to
 their filesystem labels
 following the pattern "/media/<LABEL>".
 
-The filesystem
-containing the main executable
-MUST be labeled "app".
-Additional mass storage drives
-SHOULD be labeled
-with meaningful names,
-but they will not be used directly.
-
-The auxilliary drives
-MAY be used for cached data files,
-cartridge-local game saves,
-or other application data.
-
 After mounting,
 the OS MUST attempt to
 execute "/media/app/launcher".
@@ -74,6 +61,37 @@ in the cartridge.
 Any additional drives in the cartridge SHOULD
 be used by the application itself,
 and will not be automatically used by the operating system.
+
+The filesystem
+containing the main executable
+MUST be labeled "app".
+Additional mass storage drives
+SHOULD be labeled
+with meaningful names,
+but they will not be used directly.
+
+The auxilliary drives
+MAY be used for cached data files,
+cartridge-local game saves,
+or other application data.
+
+Digital Restrictions Management (http://drm.info/)
+MAY be implemented
+(though NOT RECOMMENDED)
+by requiring a device
+to always be connected
+to the GPIO connector
+and respond to challenges
+presented by the application.
+It is RECOMMENDED that
+if this is implemented in an application,
+only a warning is presented
+about the application's authenticity.
+
+Applications MUST NOT
+require a network connection
+to operate unless it is a
+vital part of the application.
 
 ### Console
 
