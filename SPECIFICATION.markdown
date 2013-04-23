@@ -4,6 +4,8 @@ Version: {major}.{minor}.{patch}
 
 Last Modified: {datetimestamp}
 
+Authors: {authors}
+
 The key words
 "MUST", "MUST NOT", "REQUIRED",
 "SHALL", "SHALL NOT", "SHOULD",
