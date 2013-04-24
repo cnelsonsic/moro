@@ -153,3 +153,14 @@ the additional banks
 MUST NOT have any space
 between it and
 the primary bank of headers.
+
+#### Gamepad Connectors
+There MUST be
+at least two USB connectors
+(more are RECOMMENDED)
+on the front of the console.
+These connectors SHOULD be
+suggested to the end-user
+that they are for
+gamepads, keyboards, mice,
+and other user input devices.
