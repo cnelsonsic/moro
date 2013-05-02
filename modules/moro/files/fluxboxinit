@@ -1,0 +1,9 @@
+session.screen0.defaultDeco: NONE
+session.screen0.slit.maxOver: true
+session.screen0.toolbar.maxOver: true
+session.screen0.toolbar.visible: false
+session.screen0.focusNewWindows: true
+session.screen0.fullMaximization: true
+session.autoRaiseDelay: 1
+session.iconbar: false
+session.tabs: false

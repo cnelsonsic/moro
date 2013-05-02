@@ -1,0 +1,9 @@
+#!/bin/sh
+fluxbox &
+
+/etc/lxde/PreLogin
+
+# If the application exits, drop back to the login screen
+# Since it's set to autologin, it will log in,
+# remount, and re-run the application.
+/etc/lxde/PostLogin
