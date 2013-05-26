@@ -18,6 +18,7 @@ sed --in-place --expression="s/{authors}/$AUTHORS/" temp.markdown
 
 pandoc temp.markdown -t plain -o SPECIFICATION
 pandoc temp.markdown -t html5 -o SPECIFICATION.html
+pandoc temp.markdown -t markdown -o SPECIFICATION.md
 pandoc temp.markdown -o SPECIFICATION.pdf
 
 rm temp.markdown

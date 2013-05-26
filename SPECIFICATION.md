@@ -42,18 +42,18 @@ When started, the OS SHOULD automatically mount any mass storage drives
 that are connected.
 
 The mass storage drives SHOULD be mounted according to their filesystem
-labels following the pattern "/media/".
+labels following the pattern "/media/<LABEL>".
 
 After mounting, the OS MUST attempt to execute "/media/app/launcher".
 
 The file MUST be executable.
 
-Its current/working directory SHOULD be "~".
+Its current/working directory SHOULD be "\~".
 
 Hardware
 --------
 
-Cartridge
+### Cartridge
 
 There MAY be only one mass storage drive in the cartridge. Any
 additional drives in the cartridge SHOULD be used by the application
@@ -76,9 +76,9 @@ authenticity.
 Applications MUST NOT require a network connection to operate unless it
 is a vital part of the application.
 
-Console
+### Console
 
-Slot
+#### Slot
 
 The Slot is the opening that receives game cartridges.
 
@@ -88,11 +88,11 @@ The Slot MUST be at least, 10cm long, 2cm wide, with a minimum depth of
 The connectors between the console and the cartridge SHOULD be out of
 sight during normal usage.
 
-Cartridge Connectors
+#### Cartridge Connectors
 
 There are two connectors supported for connecting cartridges.
 
-USB
+##### USB
 
 There MUST be two female USB connectors on either end of the area
 immediately below the slot.
@@ -103,7 +103,7 @@ side.
 They MUST also be aligned vertically, with the long edge of the USB
 connector aligned with the short edge of the slot.
 
-GPIO
+##### GPIO
 
 In the dead center of the area immediately below the slot, there SHOULD
 be a bank of 26 (2x13) female pin headers. If present, they MUST be
@@ -114,7 +114,7 @@ spacing and extend on either side as an addition to the primary bank of
 26. If present, the additional banks MUST NOT have any space between it
 and the primary bank of headers.
 
-Gamepad Connectors
+#### Gamepad Connectors
 
 There MUST be at least two USB connectors (more are RECOMMENDED) on the
 front of the console. These connectors SHOULD be suggested to the
