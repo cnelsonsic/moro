@@ -1,8 +1,11 @@
 <h1 id="moro-game-console-specification">Moro Game Console Specification</h1>
-<p>Version: 0.1.3</p>
-<p>Last Modified: Tue, 23 Apr 2013 20:46:26 +0000</p>
+<p>Version: 0.1.10</p>
+<p>Last Modified: Sun, 26 May 2013 13:53:00 +0000</p>
 <p>Authors: C Nelson</p>
 <p>The key words &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;, &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;, &quot;MAY&quot;, and &quot;OPTIONAL&quot; in this document are to be interpreted as described in RFC 2119.</p>
+<p>This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.</p>
+<p>The spirit of this specification is to define a limited, retro, cartridge-based console. It defines a very limited set of parameters which should be adhered to by implementing parties to maintain the feeling and spirit of Moro. Moro is meant to be old-fashioned and nostalgic. Modern conveniences should be shunned.</p>
+<p>Moro is the Amish of the game console world.</p>
 <h2 id="software">Software</h2>
 <p>Implementations of this specification MUST use GNU/Linux.</p>
 <p>It is RECOMMENDED to use a Debian-based distribution, but most distributions will work.</p>
@@ -10,14 +13,16 @@
 <p>Implementations SHOULD have a very basic window manager, configured such that normal applications will be displayed fullscreen and with no window decorators. The reference implementation will use DWM (http://dwm.suckless.org/).</p>
 <p>When started, the OS SHOULD automatically mount any mass storage drives that are connected.</p>
 <p>The mass storage drives SHOULD be mounted according to their filesystem labels following the pattern &quot;/media/<LABEL>&quot;.</p>
-<p>The filesystem containing the main executable MUST be labeled &quot;app&quot;. Additional mass storage drives SHOULD be labeled with meaningful names, but they will not be used directly.</p>
-<p>The auxilliary drives MAY be used for cached data files, cartridge-local game saves, or other application data.</p>
 <p>After mounting, the OS MUST attempt to execute &quot;/media/app/launcher&quot;.</p>
 <p>The file MUST be executable.</p>
 <p>Its current/working directory SHOULD be &quot;~&quot;.</p>
 <h2 id="hardware">Hardware</h2>
 <h3 id="cartridge">Cartridge</h3>
 <p>There MAY be only one mass storage drive in the cartridge. Any additional drives in the cartridge SHOULD be used by the application itself, and will not be automatically used by the operating system.</p>
+<p>The filesystem containing the main executable MUST be labeled &quot;app&quot;. Additional mass storage drives SHOULD be labeled with meaningful names, but they will not be used directly.</p>
+<p>The auxilliary drives MAY be used for cached data files, cartridge-local game saves, or other application data.</p>
+<p>Digital Restrictions Management (http://drm.info/) MAY be implemented (though NOT RECOMMENDED) by requiring a device to always be connected to the GPIO connector and respond to challenges presented by the application. It is RECOMMENDED that if this is implemented in an application, only a warning is presented about the application's authenticity.</p>
+<p>Applications MUST NOT require a network connection to operate unless it is a vital part of the application.</p>
 <h3 id="console">Console</h3>
 <h4 id="slot">Slot</h4>
 <p>The Slot is the opening that receives game cartridges.</p>
@@ -32,3 +37,5 @@
 <h5 id="gpio">GPIO</h5>
 <p>In the dead center of the area immediately below the slot, there SHOULD be a bank of 26 (2x13) female pin headers. If present, they MUST be 0.1&quot;-spaced.</p>
 <p>There MAY be more than 26 female pin headers, but they must be the same spacing and extend on either side as an addition to the primary bank of 26. If present, the additional banks MUST NOT have any space between it and the primary bank of headers.</p>
+<h4 id="gamepad-connectors">Gamepad Connectors</h4>
+<p>There MUST be at least two USB connectors (more are RECOMMENDED) on the front of the console. These connectors SHOULD be suggested to the end-user that they are for gamepads, keyboards, mice, and other user input devices.</p>
