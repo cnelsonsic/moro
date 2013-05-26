@@ -15,6 +15,18 @@ in this document
 are to be interpreted
 as described in RFC 2119.
 
+This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.
+
+The spirit of this specification is to define a limited,
+retro, cartridge-based console.
+It defines a very limited set of parameters
+which should be adhered to by implementing parties
+to maintain the feeling and spirit of Moro.
+Moro is meant to be old-fashioned and nostalgic.
+Modern conveniences should be shunned.
+
+Moro is the Amish of the game console world.
+
 ## Software
 Implementations of this specification
 MUST use GNU/Linux.
