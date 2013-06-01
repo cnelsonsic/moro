@@ -2,69 +2,84 @@ class moro {
   exec { '/usr/bin/apt-get update': }
 
   package { [
-      'lxdm',
+      'lightdm',
       'fluxbox',
       'xinit',
       'xorg',
       'feh',
+      'localepurge',
     ]:
     ensure   => 'latest',
     provider => 'apt',
     require => Exec['/usr/bin/apt-get update'],
-    before => Service['lxdm']
+    before => Service['lightdm']
   }
 
-  service {['lxdm', 'x11-common']:
+  exec { '/usr/sbin/localepurge':
+    require => Package['localepurge'],
+  }
+
+  service {['lightdm', 'x11-common']:
     ensure => 'running',
   }
 
-  exec { '/bin/sed -i -e "s/.*# autologin=.*/autologin=vagrant/" /etc/lxdm/default.conf': 
-    require => Package['lxdm'],
-    before  => Service['lxdm'],
+  file { '/etc/lightdm/lightdm.conf':
+    source => 'puppet:///modules/moro/lightdm.conf',
+    mode => 'ugo+x',
+    require => Package['lightdm'],
+    before  => Service['lightdm'],
+    notify => Service['lightdm'],
   }
 
-  file { '/etc/lxdm/PreLogin':
+  file { '/etc/lightdm/PreLogin':
     source => 'puppet:///modules/moro/prelogin.sh',
     mode => 'ugo+x',
-    require => Package['lxdm'],
-    before  => Service['lxdm'],
+    require => Package['lightdm'],
+    before  => Service['lightdm'],
+    notify => Service['lightdm'],
   }
 
-  file { '/etc/lxdm/PostLogin':
+  file { '/etc/lightdm/PostLogin':
     source => 'puppet:///modules/moro/run_launcher.sh',
     mode => 'ugo+x',
-    require => Package['lxdm'],
-    before  => Service['lxdm'],
+    require => Package['lightdm'],
+    before  => Service['lightdm'],
+    notify => Service['lightdm'],
   }
 
-  file { '/etc/lxdm/automount.sh':
+  file { '/etc/lightdm/automount.sh':
     source => 'puppet:///modules/moro/automount.sh',
     mode => 'ugo+x',
-    require => Package['lxdm'],
-    before  => Service['lxdm'],
+    require => Package['lightdm'],
+    before  => Service['lightdm'],
+    notify => Service['lightdm'],
   }
 
-  file { ['/etc/lxdm/PostLogout', '/etc/lxdm/PreReboot', '/etc/lxdm/PreShutdown']:
+  file { ['/etc/lightdm/PostLogout', '/etc/lightdm/PreReboot', '/etc/lightdm/PreShutdown']:
     content => 'sync && sudo umount -a && shutdown -h now',
     mode => 'ugo+x',
-    require => Package['lxdm'],
-    before  => Service['lxdm'],
+    require => Package['lightdm'],
+    before  => Service['lightdm'],
+    notify => Service['lightdm'],
   }
 
-  file { '/home/vagrant/.dmrc':
+  file { '/home/pi/.dmrc':
     source => 'puppet:///modules/moro/dmrc',
-    before  => Service['lxdm'],
+    before  => Service['lightdm'],
+    notify => Service['lightdm'],
   }
 
-  file { '/home/vagrant/.fluxbox':
+  file { '/home/pi/.fluxbox':
     ensure => 'directory',
-    owner => 'vagrant',
-    before  => Service['lxdm'],
+    owner => 'pi',
+    before  => Service['lightdm'],
+    notify => Service['lightdm'],
   }
-  file { '/home/vagrant/.fluxbox/init':
+  file { '/home/pi/.fluxbox/init':
     source => 'puppet:///modules/moro/fluxboxinit',
-    owner => 'vagrant',
-    require => File['/home/vagrant/.fluxbox'],
-    before  => Service['lxdm'],
+    owner => 'pi',
+    require => File['/home/pi/.fluxbox'],
+    before  => Service['lightdm'],
+    notify => Service['lightdm'],
   }
 }

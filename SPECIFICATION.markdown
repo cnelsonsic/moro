@@ -44,7 +44,10 @@ configured such that
 normal applications will be
 displayed fullscreen
 and with no window decorators.
-The reference implementation will use DWM (http://dwm.suckless.org/).
+
+The reference implementation uses
+lightdm (http://www.freedesktop.org/wiki/Software/LightDM/) as its display manager,
+and fluxbox (http://fluxbox.org/) as its window manager.
 
 When started,
 the OS SHOULD automatically

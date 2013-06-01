@@ -1,4 +1,5 @@
 #!/bin/bash -x
+git fetch --tags
 LASTTAG=$(git describe --tags $(git rev-list --tags --max-count=1))
 
 DATETIME=$(date -Ru)
@@ -6,7 +7,8 @@ DATETIME=$(date -Ru)
 AUTHORS=$(git log --format='%aN' | sort -u | python -c "import sys; print ', '.join(line.strip() for line in sys.stdin.readlines())")
 
 MAJOR="0" # This is incremented manually.
-MINOR=$(git tag | wc -l) # Number of tags is the minor release
+_LASTMINOR=$( echo $LASTTAG | awk -F'.' '{ print $2 }' )
+MINOR=$(( _LASTMINOR + 1)) # Last tag's minor release, plus one.
 PATCH=$(git log --oneline $LASTTAG..HEAD | wc -l) # Commits since the tagged release
 
 cp SPECIFICATION.markdown temp.markdown

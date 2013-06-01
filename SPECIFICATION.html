@@ -1,6 +1,6 @@
 <h1 id="moro-game-console-specification">Moro Game Console Specification</h1>
-<p>Version: 0.1.11</p>
-<p>Last Modified: Sun, 26 May 2013 13:56:41 +0000</p>
+<p>Version: 0.1.13</p>
+<p>Last Modified: Sat, 01 Jun 2013 15:45:12 +0000</p>
 <p>Authors: C Nelson</p>
 <p>The key words &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;, &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;, &quot;MAY&quot;, and &quot;OPTIONAL&quot; in this document are to be interpreted as described in RFC 2119.</p>
 <p>This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.</p>
@@ -10,7 +10,8 @@
 <p>Implementations of this specification MUST use GNU/Linux.</p>
 <p>It is RECOMMENDED to use a Debian-based distribution, but most distributions will work.</p>
 <p>Implementations MUST also use X11. It is RECOMMENDED to use XOrg.</p>
-<p>Implementations SHOULD have a very basic window manager, configured such that normal applications will be displayed fullscreen and with no window decorators. The reference implementation will use DWM (http://dwm.suckless.org/).</p>
+<p>Implementations SHOULD have a very basic window manager, configured such that normal applications will be displayed fullscreen and with no window decorators.</p>
+<p>The reference implementation uses lightdm (http://www.freedesktop.org/wiki/Software/LightDM/) as its display manager, and fluxbox (http://fluxbox.org/) as its window manager.</p>
 <p>When started, the OS SHOULD automatically mount any mass storage drives that are connected.</p>
 <p>The mass storage drives SHOULD be mounted according to their filesystem labels following the pattern &quot;/media/<LABEL>&quot;.</p>
 <p>After mounting, the OS MUST attempt to execute &quot;/media/app/launcher&quot;.</p>

@@ -1,9 +1,9 @@
 Moro Game Console Specification
 ===============================
 
-Version: 0.1.11
+Version: 0.1.13
 
-Last Modified: Sun, 26 May 2013 13:56:41 +0000
+Last Modified: Sat, 01 Jun 2013 15:45:12 +0000
 
 Authors: C Nelson
 
@@ -35,8 +35,11 @@ Implementations MUST also use X11. It is RECOMMENDED to use XOrg.
 
 Implementations SHOULD have a very basic window manager, configured such
 that normal applications will be displayed fullscreen and with no window
-decorators. The reference implementation will use DWM
-(http://dwm.suckless.org/).
+decorators.
+
+The reference implementation uses lightdm
+(http://www.freedesktop.org/wiki/Software/LightDM/) as its display
+manager, and fluxbox (http://fluxbox.org/) as its window manager.
 
 When started, the OS SHOULD automatically mount any mass storage drives
 that are connected.
