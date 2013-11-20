@@ -137,15 +137,33 @@ the slot.
 
 They MUST be
 offset toward the
-center of the slot
-by 1cm from either side.
+ends of the slot
+by 5cm from the center of
+of the slot,
+measured from the furthest inside edges
+of the USB connector.
 
-They MUST also be
-aligned vertically,
-with the long edge
-of the USB connector
-aligned with the short edge
+They MUST be 8cm away from each other,
+measured from the furthest inside edges
+of the USB connector.
+
+They MUST be centered
+along the axis
+intersecting the short edge
 of the slot.
+
+They MUST be
+aligned such that
+the long edge
+of the USB connector
+is aligned with the short edge
+of the slot.
+
+The open portion
+of the female USB connector
+must be oriented
+such that it is
+nearest the outside edge.
 
 ##### GPIO
 In the dead center
